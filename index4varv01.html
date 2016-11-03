@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    var a = 12;
+    var b = 13;
+    var c = 18;
+    var d = 14;
+    var mm1, mm2, m1, m2, m3, max1, max2, max3;
+    if (a > b) {
+      mm1 = a;
+      mm2 = b;
+    } else {
+      mm1 = b;
+      mm2 = a;
+    }
+    if (mm1 > c) {
+      if (mm2 > c) {
+        m1 = mm1;
+        m2 = mm2;
+        m3 = c;
+      } else {
+        m1 = mm1;
+        m2 = c;
+        m3 = mm2;
+      }
+    } else {
+      m1 = c;
+      m2 = mm1;
+      m3 = mm2;
+    }
+    if (m1 > d) {
+      if (m2 > d) {
+        if (m3 > d) {
+          alert(max1 = m1*1000);
+          alert(max2 = m2*100);
+          alert(max3 = m3*10);
+        } else {
+          alert(max1 = m1*1000);
+          alert(max2 = m2*100);
+          alert(max3 = d*10);
+        }
+      } else {
+        alert(max1 = m1*1000);
+        alert(max2 = d*100);
+        alert(max3 = m2*10);
+      }
+    } else {
+      alert(max1 = d*1000);
+      alert(max2 = m1*100);
+      alert(max3 = m2*10);
+    }
+  </script>
+</head>
+
+</html>

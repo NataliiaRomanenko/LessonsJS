@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    var a=12;
+    var b=10;
+    var c=16;
+    var m1, m2, max, min;
+    
+
+    if (a>b){
+      m1=max=a;
+      m2=min=b;
+    }
+    else {
+      m1=max=b;
+      m2=min=a;
+    }
+    if (max>c){
+      if (m2>c){
+        alert (m1=max);
+        alert (m2=min);
+      }
+      else {
+        alert (m1=max);
+        alert (m2=c);
+      }
+    }
+    else {
+        alert (m1=c);
+        alert (m2=max);
+    }
+    </script>
+</body>
+
+</html>
