@@ -1,2 +1,158 @@
-<h1>New page</h1>
-<p> this is new page</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+//   <!-- Создайте массив с элементами «Джаз», «Блюз».
+// Добавьте в конец значение «Рок-н-Ролл»
+// Замените предпоследнее значение с конца на «Классика». Код замены предпоследнего значения должен работать для массивов любой длины.
+// Удалите первое значение массива и выведите его alert.
+// Добавьте в начало значения «Рэп» и «Регги». -->
+  var arr = ["Джаз", "Блюз"];
+  arr.push ("Рок-н-Ролл");
+  alert (arr);
+  
+  arr[arr.length-2] ="Классика";
+  alert(arr);
+  
+  arr.shift();
+  alert (arr);
+  
+  arr.unshift ("Рэп", "Регги");
+  alert(arr);
+ </script>
+
+<!-- // Как получить последний элемент из произвольного массива?
+
+// У нас есть массив goods. Сколько в нем элементов – не знаем, но можем прочитать из goods.length.
+
+// Напишите код для получения последнего элемента goods. -->
+  <script>
+var fruits = ["Яблоко", "Груша", "Слива"];
+var lastItem = fruits[fruits.length - 1];
+ alert(lastItem);
+  </script>
+
+<!--  Как добавить элемент в конец произвольного массива?
+
+У нас есть массив goods. Напишите код для добавления в его конец значения «Компьютер». -->
+  <script>
+var goods = ["fdddd", "aaa", "eeeee"];
+goods.push("computer");
+ alert(goods);
+  </script>
+
+ <!--  <script>
+var goods = ["fdddd", "aaa", "eeeee"];
+goods[goods.length] = 'Компьютер'
+ alert(goods);
+  </script> -->
+
+
+<!-- Напишите код для вывода alert случайного значения из массива: -->
+<script type="text/javascript">
+	var arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+
+var rand = Math.floor(Math.random() * arr.length);
+
+alert( arr[rand] );
+</script>
+<!--  Что выведет этот код? -->
+<script type="text/javascript">
+var arr = [1, 2, 3];
+
+var arr2 = arr;
+arr2[0] = 5;
+
+alert( arr[0] );
+alert( arr2[0] );
+// Код выведет 5 в обоих случаях, так как массив является объектом. В строке (*) в переменную arr2 копируется ссылка на него, а сам объект в памяти по-прежнему один, в нём отражаются изменения, внесенные через arr2 или arr.
+</script>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+        <script>
+      var arr1 = [],
+          arr2 = [], 
+          arr = [];
+function rand (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+for (var i = 0; i<15; ++i){
+  var num1 = rand(-100, -1); 
+    if(!(num1 % 2 == 0)) {
+    arr1.push(num1);
+    } 
+    else {--i};
+  }
+for (var i = 0; i<15; ++i){
+  var num2 = rand(0, 100); 
+    if (num2 % 2 ==0){
+    arr2.push(num2);
+    }
+    else {--i};
+  }
+arr.push(arr1,arr2);
+
+alert(arr);
+
+
+    </script>
+  </head>
+
+  <body>
+  
+    </body>
+
+</html>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+        <script>
+      var arr1 = [],
+          arr2 = [], 
+          arr = [];
+function rand (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+for (var i = 0; i<15; ++i){
+  var num1 = rand(-100, -1); 
+    if(!(num1 % 2 == 0)) {
+    arr1.push(num1);
+    } 
+    else {--i};
+  }
+for (var i = 0; i<15; ++i){
+  var num2 = rand(0, 100); 
+    if (num2 % 2 ==0){
+    arr2.push(num2);
+    }
+    else {--i};
+  }
+arr.push(arr1,arr2);
+
+//alert(arr);
+console.log (arr);
+
+for (i=0;arr.length;i++4){
+  alert (arr);
+}
+
+
+    </script>
+  </head>
+
+  <body>
+  
+    </body>
+
+</html>

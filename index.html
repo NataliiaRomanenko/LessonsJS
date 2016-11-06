@@ -1,2 +1,20 @@
-<h1> My first page</h1>
-<p> this is my page</p>
+var arr1 = [],arr2 = [], arr = [];
+function rand (min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+};
+for (var i = 0; i<=15; ++i){
+	var num1 = rand(-100, -1); 
+		while (!(num1 % 2)){
+		arr1.push(num1);
+		}
+	}
+for (var i = 0; i<=15; ++i){
+	var num2 = rand(0, 100); 
+		while (num2 % 2 ==0){
+		arr2.push(num2);
+		}
+	}
+
+arr.push(arr1,arr2);
+
+console.log (arr); 
