@@ -1,0 +1,109 @@
+<!-- // 1) Пройти  массив по периметру ПРОТИВ часовой стрелки.
+// 2) Пройти треугольник (2 строны + ГЛАВНАЯ диагональ) по периметру 
+// по часовой стрелки от точки 0-0.
+// 3) Пройти треугольник (2 строны + ПОБОЧНАЯ диагональ) по периметру 
+// ПРОТИВ часовой стрелки от точки 9-9. -->
+<!DOCTjPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script tjpe="text/javascript">
+		
+		var arr = [];
+var SIZE_ARR = prompt ("put array size","");
+function rand (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+for (var i = 0; i < SIZE_ARR; i++) {
+  arr[i] =[];
+  for (var j = 0; j < SIZE_ARR; j++) {
+    arr[i].push(rand(0, 100));
+  }
+}
+console.table(arr); 
+/*~~~~~~~~~~~~~~~~~ Пройти  массив по периметру ПРОТИВ часовой стрелки.~~~~~~~~~~~~~~~~~~~*/
+var border = {
+	top: arr[0].slice().reverse(),
+	right: [],
+	bottom: arr[arr.length - 1].slice(),
+	left: []
+};
+for (var i = 1; i < arr.length - 1; i++) {
+	border.left.push(arr[i][0]);
+
+	border.right.push(
+		arr[i][arr.length - 1]
+	);
+}
+border.right.reverse();
+
+var perimeter = border.left.concat(border.bottom,border.right, border.top);
+console.log(perimeter);
+
+/*~~~~~~~~~~~Пройти треугольник (2 строны + ГЛАВНАЯ диагональ) по периметру по часовой стрелки от точки 0-0~~~~~~~~~~~~~~~~~~~*/
+var triangle = {
+	top: arr[0].slice(),
+	right: [],
+	diagonal: []
+	};
+var mirror = [];
+for (var i = 1; i < arr.length - 1; i++) {
+	triangle.right.push( arr[i][arr.length-1]);
+
+}
+
+// for (var i=1 ;i<arr.length; i++) {
+
+
+//     for (var j=0 ;j<arr.length; j++) {
+
+//       if (j==i) {
+//	triangle.diagonal.push(arr[i][j])};
+
+//     }
+//   }
+
+for (var j=1, i=1; j<arr.length, i<arr.length; j++, i++) {
+    triangle.diagonal.push(arr[i][j]);}
+
+triangle.diagonal.reverse();
+// console.log (triangle.top);
+// console.log (triangle.right);
+// console.log (triangle.diagonal);
+
+var mainTriangle = triangle.top.concat(triangle.right, triangle.diagonal);
+console.log(mainTriangle);
+/*~~Пройти треугольник (2 строны + ГЛАВНАЯ диагональ) по периметру по часовой стрелки от точки 0-0 и зеркально отобразить его~*/
+for (var j=1, i=0; j<arr.length, i<arr.length; j++, i++) {
+    mirror.push(arr[i][j]);}
+    console.log(mirror);
+
+/*~~~~~~~~~~~~~~~Пройти треугольник (2 строны + ПОБОЧНАЯ диагональ) по периметру ПРОТИВ часовой стрелки от точки 9-9.~~~~~~~~~*/
+var triangleTwo = {
+	right: border.right.slice(),
+	bottom: arr[arr.length - 1].slice(),
+	diagonal: []
+};
+
+for (var j=arr.length-1, i=0; j<=0, i<arr.length-1; j--, i++) {
+    triangleTwo.diagonal.push(arr[i][j]);}
+    
+  
+// console.log (triangleTwo.bottom);
+// console.log (triangleTwo.right);
+// console.log (triangleTwo.diagonal);
+
+var secondTriangle = triangleTwo.bottom.concat(triangleTwo.right, triangleTwo.diagonal);
+console.log(secondTriangle);
+
+
+
+	</script>
+}
+</head>
+<body>
+	
+</body>
+</html>
+
