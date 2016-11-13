@@ -3,12 +3,12 @@
 // по часовой стрелки от точки 0-0.
 // 3) Пройти треугольник (2 строны + ПОБОЧНАЯ диагональ) по периметру 
 // ПРОТИВ часовой стрелки от точки 9-9. -->
-<!DOCTjPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<script tjpe="text/javascript">
+	<script type="text/javascript">
 		
 		var arr = [];
 var SIZE_ARR = prompt ("put array size","");
@@ -74,11 +74,6 @@ triangle.diagonal.reverse();
 
 var mainTriangle = triangle.top.concat(triangle.right, triangle.diagonal);
 console.log(mainTriangle);
-/*~~Пройти треугольник (2 строны + ГЛАВНАЯ диагональ) по периметру по часовой стрелки от точки 0-0 и зеркально отобразить его~*/
-for (var j=1, i=0; j<arr.length, i<arr.length; j++, i++) {
-    mirror.push(arr[i][j]);}
-    console.log(mirror);
-
 /*~~~~~~~~~~~~~~~Пройти треугольник (2 строны + ПОБОЧНАЯ диагональ) по периметру ПРОТИВ часовой стрелки от точки 9-9.~~~~~~~~~*/
 var triangleTwo = {
 	right: border.right.slice(),
