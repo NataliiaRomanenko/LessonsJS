@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+
+//Generator binary. 1 If the orientation is vertical, otherwise horizontal.
+    function getRandomBinary(){
+        var rend = Math.random();
+        if(rend < 0.5) {return 0}
+        else {return 1};
+    }
+//Generator random coordinates from 0 to 9.
+    function getRandomCoor() {
+        var x = Math.floor(Math.random() * 10);
+        return x;
+    }
+//A function of creation decks of the ship's coordinates,
+// the randomly coordinate the first deck and random orientation.
+    function Shipdeck(deck) {
+        var d = getRandomBinary();
+        //console.log(d);
+        var c0 = getRandomCoor();
+        //console.log(c0);
+        var c1 = getRandomCoor();
+        //console.log(c1);
+
+            var deck4mass = [];
+            var temp=c0;
+            if (d == 1) {
+                for (var i = 0; i < deck; i++) {
+                    deck4mass[i] = [];
+                    c0=temp;
+                    for (var j = 0; j < 2; j++) {
+                        deck4mass[i].push(c0);
+                        c0 = c1+i;
+                    }
+                }
+                //return deck4mass;
+            }
+
+            else {
+                for (var i = 0; i < deck; i++) {
+                    deck4mass[i] = [];
+                    c0=temp+i;
+                    for (var j = 0; j < 2; j++) {
+                        deck4mass[i].push(c0);
+                        c0 = c1;
+                    }
+                }
+                //return deck4mass;
+            }
+        for (var k = 0; k < deck4mass.length; k++) {
+            for (var l = 0; l < deck4mass[k].length; l++){
+                if(deck4mass[k][l] > 9) {
+                   // console.table(deck4mass);
+                    return Shipdeck(deck);
+                }
+            }
+        }
+        return deck4mass;
+    }
+    console.table(Shipdeck(4));
+    console.table(Shipdeck(3));
+    console.table(Shipdeck(2));
+    console.table(Shipdeck(1));
+
+
+
+
+
+</script>
+</body>
+</html>
