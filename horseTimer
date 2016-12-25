@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Run() {
+		this.fTime = 0;
+		this.contTime = 0;
+		var mi  = this;
+		setTimeout(function go(){
+			var v = 0.15;
+			var s = v*mi.contTime;
+			var fatigue = v*mi.fTime;
+			console.log('time= ',mi.contTime,'sec','milliage= ',s, 'km');
+			if (fatigue > 1) {
+				mi.fTime = 0;
+				//console.log(mi.fTime);
+				setTimeout(go,3000);
+				console.log('rest');
+			}
+			else {
+				var timerId = setTimeout(go,1000);
+			};
+			if (s >= 3) {
+				clearTimeout(timerId);
+			};
+			mi.contTime++;
+			mi.fTime++;
+		},1000);
+
+	}
+
+	Run();
+</script>
+
+</body>
+</html>
