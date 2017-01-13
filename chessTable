@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 3px 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	var holder = document.createElement('table');
+	var SIZE = 10;
+	for (var i=0; i<SIZE; i++){
+		var tr = document.createElement('tr');
+
+		for (var j=0; j<SIZE; j++){
+		var td = document.createElement('td');
+		td.innerText = 'ячейка ' +(j+1);
+		tr.appendChild (td);
+		var st = ((i+j)%2);
+		if(st==0){
+		td.style.backgroundColor = 'red';
+		}
+		else{
+			td.style.backgroundColor = 'green';
+		};
+
+		}
+	holder.appendChild(tr);
+
+	}
+	document.body.appendChild(holder);
+  
+</script>
+
+</html>
